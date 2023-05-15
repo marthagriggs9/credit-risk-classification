@@ -37,6 +37,10 @@ The dataset contained 77,536 data points and was split into training and testing
 
 The model that used the original data had 75,036 low-risk data points and only 2,500 high-risk data points. This data was then resampled to ensure that that the logistic regression model had an equal number of data points to learn from. The training dataset was resampled with `RandomOverSampler` module from imbalanced-learn. There were then 56,271 data points for both low-risk and high-risk loans. This resampled data was used to build a new logistic regression model. Again, the purpose of the model (Machine Learning Model 2) was to determine whether a loan issued to a borrower in the testing set would be low (healthy) or hgh-risk (unhealthy). 
 
+## Results
+
+Using bulleted lists, describe the balanced accuracy scores and the precision and recall scores of all machine learning models.
+
 * Machine Learning Model 1 (Original Data):
   * Balanced Accuracy Score of 95.2%. 
   * Precision Score of 92% (an average -- in predicting low-risk loans, the model was 100% precise, but only 85% precision on predicting high-risk loans.)
@@ -47,3 +51,11 @@ The model that used the original data had 75,036 low-risk data points and only 2
   * Balanced Accuracy Score of 99.3%
   * Precision Score of 92% (an average -- in predicting healthy loans, the model was 100% precise. It was only 84% precise in predicting high-risk loans.)
   * Recall Score was 99% for predicting both healthy and high-risk loans. 
+
+## Summary
+
+Summarize the results of the machine learning models, and include a recommendation on the model to use, if any. For example:
+
+* Machine Learning Model 2 has a higher balanced accuracy score (99.3%). This resampled data had less false predictions overall. Model 2's recall score showed that this model was more accurate at predicting high risk loans. This is important if the bank wants to minimize financial losses. Model 1 had a lower recall score for predicting high-risk loans which could end up being bad for the bank, especially if a large loan is issued to a 'high-risk' client.
+
+* While neither model scored above 90% in precision when predicting high-risk loans, there is only the risk of losing potential customers, which to me is less of a loss than clients not being able to pay their loan back. Model 2 also had a more balanced dataset to learn from, which I feel trumps what Model 1 was able to do, considering its much higher number of healthy loans in the the training set used. 
