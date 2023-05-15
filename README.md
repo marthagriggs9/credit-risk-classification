@@ -1,5 +1,7 @@
 # credit-risk-classification
 
+In this challenge, you'll use various techniques to train and evaluate a model based on loan risk. You'' use a dataset of historical lending activity from a peer-to-peer lending services company to build a model that can identify the creditworthiness of borrowers. 
+
 ## Split the Data into Training and Testing Sets
 
 1. read the `lending_data.csv` data from the Resources folder into a Pandas DataFrame.
@@ -68,8 +70,14 @@ Using bulleted lists, describe the balanced accuracy scores and the precision an
 
 ## Summary
 
-Summarize the results of the machine learning models, and include a recommendation on the model to use, if any. For example:
+Summarize the results of the machine learning models, and include a recommendation on the model to use, if any.
+### Machine Learning Model 1 (Original Data):
+There is a perfect precision score for the 'healthy loans', which is important because it minimizes false positives, which could lead to a loss of potential clients. A high recall score is important to minimize false negatives, which could lead to financial losses. 
+The system also has a precision score of 0.85 for 'high-risk loans', showing that there is a decent predicting score for the true positive. However, these results are misleading because the dataset is imbalanced. There are significantly more healthy loans that are being tested than high-risk loans. It will be interesting to see what will be produced with a resampled dataset. The confusion matrix shows that out of the 18,765 loans, the model predicted 18,663 as healthy correctly and 102 as healthy incorrectly. Out of the 619 loans that are 'high-risk', the model predicted 563 as non-healthy correctly and 56 as non-healthy incorrectly. 
 
-* Machine Learning Model 2 has a higher balanced accuracy score (99.3%). This resampled data had less false predictions overall. Model 2's recall score showed that this model was more accurate at predicting high risk loans. This is important if the bank wants to minimize financial losses. Model 1 had a lower recall score for predicting high-risk loans which could end up being bad for the bank, especially if a large loan is issued to a 'high-risk' client.
+### Machine Learning Model 2 (Resampled Data):
+This model showed an accuracy score of 99% which is higher that the model fitted with the original (imbalanced) data. The recall score increased with this model from 91% to 99% for the high-risk loans. It was more accurate at correctly predicting high-risk loans. 
+This model still predicts a healthy, low risk loan with 100% precision. It predicts a high-risk loan with lower precision (84%), which is 1% lower than the model that used the original data. This model shows a balanced accuracy of 99%, which is up from the balanced accuracy score of the original model - 95%. This confusion matrix shows that out of the 18,765 loans, the model predicted 18,649 as healthy correctly and 116 as healthy incorrectly. Out of the 619 loans that are 'high-risk', the model predicted 615 as non-healthy correctly and 4 as non-healthy incorrectly. 
 
-* While neither model scored above 90% in precision when predicting high-risk loans, there is only the risk of losing potential customers, which to me is less of a loss than clients not being able to pay their loan back. Model 2 also had a more balanced dataset to learn from, which I feel trumps what Model 1 was able to do, considering its much higher number of healthy loans in the the training set used. 
+### Recommendation: 
+I would recommend using Machine Learning Model 2, as it has a higher balanced accuracy score (99.3%). This resampled data had less false predictions overall. Model 2's recall score showed that this model was more accurate at predicting high risk loans. This is important if the peer-to-peer lenders wants to minimize financial losses. Model 1 had a lower recall score for predicting high-risk loans which could end up being bad for the lenders, especially if a large loan is issued to a 'high-risk' client. While neither model scored above 90% in precision when predicting high-risk loans, there is only the risk of losing potential clients, which to me is less of a loss, than if clients not being able to pay their loan back. Model 2 also had a more balanced dataset to learn from, which I feel trumps what Model 1 was able to do, considering its much higher number of healthy loans in the the training set used. 
