@@ -19,6 +19,20 @@
 4. Answer the following question:
    * How well does the logistic regression model predict both the 0 (healthy loan) and 1 (high-risk loan) labels?
 
+## Create a Logistic Regression Model with Resampled Data
+
+1. Use `RandomOverSampler` module from the imbalanced-learn library to resample the data.
+   * Be sure to confirm that the labels have an equal number of data points.
+2. Fit a logistic regression model by using the training data (`X_train` and 'y_train`). 
+3. Save the predictions for the testing data labels by using the testing feature data (`X_test`) and the fitted model. 
+4. Evaluate the model's performance by doing the following:
+   * Calculate the accuracy score of the model. 
+   * Generate a confusion matrix. 
+   * Print the classification report. 
+
+4. Answer the following question:
+   * How well does the logistic regression model predict both the 0 (healthy loan) and 1 (high-risk loan) labels?
+
 
 ## Overview of the Analysis
 
