@@ -61,7 +61,7 @@ Using bulleted lists, describe the balanced accuracy scores and the precision an
   * Recall Score was 95% (an average --  the model had 99% recall in predicting healthy loans and 91% in predicting high-risk loans)
 
 
-* Machine Learning Model 2:
+* Machine Learning Model 2 (Resampled Data):
   * Balanced Accuracy Score of 99.3%
   * Precision Score of 92% (an average -- in predicting healthy loans, the model was 100% precise. It was only 84% precise in predicting high-risk loans.)
   * Recall Score was 99% for predicting both healthy and high-risk loans. 
